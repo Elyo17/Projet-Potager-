@@ -26,9 +26,9 @@ public class MoverDrone : MonoBehaviour
         transform.Rotate(Vector3.up, stickdirection.x * rotationSpeed * Time.deltaTime);
 
         // Move character
-        Vector3 moveDirection = transform.forward * stickdirection.y * playerSpeed;
+        Vector3 moveDirection = transform.forward * stickdirection.y * playerSpeed * Time.deltaTime;
 
-        charactercontroller.SimpleMove(moveDirection);
+        charactercontroller.Move(moveDirection);
         Debug.Log(stickdirection);
     }
 }
