@@ -4,25 +4,16 @@ using UnityEngine.InputSystem;
 public class MoverDrone : MonoBehaviour
 {
     public InputActionReference ActionReference;
-    private float playerSpeed = 1f;
+    public float playerSpeed = 10f;
+    private float rotationSpeed = 90.0f;
 
-    private CharacterController controller;
+    private CharacterController charactercontroller;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        controller = GetComponent<CharacterController>();
-    }
-
-    private void OnEnable()
-    {
-        ActionReference.action.Enable();
-    }
-
-    private void OnDisable()
-    {
-        ActionReference.action.Disable();
+        charactercontroller = GetComponent<CharacterController>();
     }
 
 
@@ -31,14 +22,13 @@ public class MoverDrone : MonoBehaviour
     {
         // Read input
         Vector2 stickdirection = ActionReference.action.ReadValue<Vector2>();
-        Vector3 move = new Vector3(stickdirection.x, 0, stickdirection.y);
-        move = Vector3.ClampMagnitude(move, 1f);
+        // Rotate character
+        transform.Rotate(Vector3.up, stickdirection.x * rotationSpeed * Time.deltaTime);
 
-        if (move != Vector3.zero)
-        {
-            transform.forward = move;
-        }
+        // Move character
+        Vector3 moveDirection = transform.forward * stickdirection.y * playerSpeed;
 
-        controller.Move(move * Time.deltaTime);
+        charactercontroller.SimpleMove(moveDirection);
+        Debug.Log(stickdirection);
     }
 }
