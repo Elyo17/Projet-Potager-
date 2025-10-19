@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e02fe6510a09f479183c684abb7427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoverDrone
-  ActionReference: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  ActionReference: {fileID: 7098814216952229935, guid: 2f97034e25064d744bbb6ab6f8ac887d, type: 3}
   playerSpeed: 20
 --- !u!143 &323894631
 CharacterController:
@@ -462,7 +462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5579699372444814116, guid: e746f881748d3a147949e70e5c570880, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.59
+      value: 12.08
       objectReference: {fileID: 0}
     - target: {fileID: 5579699372444814116, guid: e746f881748d3a147949e70e5c570880, type: 3}
       propertyPath: m_LocalPosition.z
@@ -897,7 +897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4054975392333186564, guid: 5db9ef64eea187d408b8f2ed6a769744, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.159
+      value: 23.96
       objectReference: {fileID: 0}
     - target: {fileID: 4054975392333186564, guid: 5db9ef64eea187d408b8f2ed6a769744, type: 3}
       propertyPath: m_LocalPosition.y
@@ -950,7 +950,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 197266056126619930, guid: 99f2833276ae0fc4b8aa6f7c678738b6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.76072
+      value: 18.74
       objectReference: {fileID: 0}
     - target: {fileID: 197266056126619930, guid: 99f2833276ae0fc4b8aa6f7c678738b6, type: 3}
       propertyPath: m_LocalPosition.y
