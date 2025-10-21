@@ -29,6 +29,5 @@ public class MoverDrone : MonoBehaviour
         Vector3 moveDirection = transform.forward * stickdirection.y * playerSpeed * Time.deltaTime;
 
         charactercontroller.Move(moveDirection);
-        Debug.Log(stickdirection);
     }
 }

@@ -54,15 +54,17 @@ public class InteractDrone : MonoBehaviour
     private void TryPickupSeed()
     {
         // Raycast devant le drone
-        Ray ray = new Ray(transform.position, transform.forward);
+        Ray ray = new Ray(transform.position, Vector3.down);
+        Debug.Log("oui");
         if (Physics.Raycast(ray, out RaycastHit hit, interactRange, interactLayer))
         {
             GameObject target = hit.collider.gameObject;
+            Debug.Log(target, target);
 
             // "Ramasser" la graine
             carriedSeed = target;
             carriedSeed.transform.SetParent(holdPoint);
-            carriedSeed.transform.localPosition = Vector3.zero;
+            carriedSeed.transform.localPosition = Vector3.down*2;
             carriedSeed.transform.localRotation = Quaternion.identity;
 
             // Désactiver sa physique si elle en a
