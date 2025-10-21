@@ -35,7 +35,12 @@ public class InteractDrone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // Si le drone tient une graine, on met à jour sa position chaque frame
+        if (carriedSeed != null)
+        {
+            carriedSeed.transform.position = holdPoint.position;
+            carriedSeed.transform.rotation = holdPoint.rotation;
+        }
     }
 
     private void OnActionPerformed(InputAction.CallbackContext context)
@@ -64,7 +69,7 @@ public class InteractDrone : MonoBehaviour
             // "Ramasser" la graine
             carriedSeed = target;
             carriedSeed.transform.SetParent(holdPoint);
-            carriedSeed.transform.localPosition = Vector3.down*2;
+            carriedSeed.transform.localPosition = transform.position+ Vector3.down*2;
             carriedSeed.transform.localRotation = Quaternion.identity;
 
             // Désactiver sa physique si elle en a
@@ -84,7 +89,7 @@ public class InteractDrone : MonoBehaviour
         if (carriedSeed.TryGetComponent<Rigidbody>(out var rb))
         {
             rb.isKinematic = false;
-            rb.AddForce(transform.forward * 2f, ForceMode.Impulse); // petit lancer
+            rb.AddForce(Vector3.down * 2f, ForceMode.Impulse); // petit lancer
         }
 
         carriedSeed = null;
