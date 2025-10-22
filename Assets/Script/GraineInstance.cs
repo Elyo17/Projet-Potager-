@@ -3,7 +3,7 @@ using UnityEngine;
 public class GraineInstance : MonoBehaviour
 {
 
-    public 
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,4 +15,6 @@ public class GraineInstance : MonoBehaviour
     {
         
     }
+
+  
 }
