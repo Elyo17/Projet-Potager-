@@ -14,7 +14,7 @@ public class InteractDrone : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+   
     }
 
     private void OnEnable()
@@ -71,12 +71,6 @@ public class InteractDrone : MonoBehaviour
             carriedSeed.transform.SetParent(holdPoint);
             carriedSeed.transform.localPosition = transform.position+ Vector3.down*2;
             carriedSeed.transform.localRotation = Quaternion.identity;
-
-            // Désactiver sa physique si elle en a
-            if (carriedSeed.TryGetComponent<Rigidbody>(out var rb))
-            {
-                rb.isKinematic = true;
-            }
         }
     }
 
@@ -92,7 +86,15 @@ public class InteractDrone : MonoBehaviour
             rb.AddForce(Vector3.down * 2f, ForceMode.Impulse); // petit lancer
         }
 
+        Destroy(carriedSeed);
+
+        Instantiate(carriedSeed, transform.position, Quaternion.identity);
         carriedSeed = null;
+        Debug.Log("Planté");
+
+        
     }
+
+   
 }
 

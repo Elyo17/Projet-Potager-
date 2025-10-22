@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class GraineInstance : MonoBehaviour
+public class BoxZone : MonoBehaviour
 {
-
-    public 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
