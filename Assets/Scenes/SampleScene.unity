@@ -634,7 +634,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -649,7 +649,7 @@ Transform:
   m_GameObject: {fileID: 513541212}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: 2.62, z: -7}
+  m_LocalPosition: {x: -7, y: -2.49, z: -7}
   m_LocalScale: {x: 13, y: 5, z: 13}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -667,7 +667,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc89de1039e4c2548b56b1a7f70ad45c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoxZone
-  carriedSeed: {fileID: 0}
 --- !u!1001 &760793076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -878,7 +877,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc89de1039e4c2548b56b1a7f70ad45c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoxZone
-  carriedSeed: {fileID: 0}
 --- !u!54 &979620907
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -919,6 +917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GraineInstance
   isPlantable: 1
+  isGrained: 0
 --- !u!1 &1029413630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,6 +1233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GraineInstance
   isPlantable: 1
+  isGrained: 0
 --- !u!1001 &1419738507499584843
 PrefabInstance:
   m_ObjectHideFlags: 0
