@@ -3,7 +3,7 @@ using UnityEngine;
 public class GraineInstance : MonoBehaviour
 {
 
-    
+    private GameObject carriedSeed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,5 +16,19 @@ public class GraineInstance : MonoBehaviour
         
     }
 
-  
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("La graine touche le sol");
+        if (other.CompareTag("Sol"))
+        {
+            Debug.Log("comparetag détecte");
+            transform.Translate(Vector3.down * Time.deltaTime * 0.2f);
+            if (carriedSeed != null)
+            {
+                carriedSeed.SetActive(false);
+            }
+        }
+    }
+
 }

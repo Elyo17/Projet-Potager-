@@ -9,7 +9,7 @@ public class InteractDrone : MonoBehaviour
     public float interactRange = 3f; // distance max pour interagir
     public LayerMask interactLayer; // couche des objets interactifs (ex: "Seed")
 
-    private GameObject carriedSeed; // la graine que le drone tient actuellement
+    public GameObject carriedSeed; // la graine que le drone tient actuellement
     public Transform holdPoint; // un point enfant du drone où la graine est tenue
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -60,7 +60,8 @@ public class InteractDrone : MonoBehaviour
     {
         // Raycast devant le drone
         Ray ray = new Ray(transform.position, Vector3.down);
-        Debug.Log("oui");
+        Debug.Log("On entre dans TryPickupSeed");
+        Debug.DrawRay(ray.origin, ray.direction * interactRange, Color.red);
         if (Physics.Raycast(ray, out RaycastHit hit, interactRange, interactLayer))
         {
             GameObject target = hit.collider.gameObject;
@@ -69,13 +70,19 @@ public class InteractDrone : MonoBehaviour
             // "Ramasser" la graine
             carriedSeed = target;
             carriedSeed.transform.SetParent(holdPoint);
-            carriedSeed.transform.localPosition = transform.position+ Vector3.down*2;
+            carriedSeed.transform.localPosition = Vector3.zero;
             carriedSeed.transform.localRotation = Quaternion.identity;
+        }
+        else
+        {
+            Debug.Log("No seed detected under drone.");
         }
     }
 
     private void DropSeed()
     {
+        if (carriedSeed == null) return;
+
         // La lâcher
         carriedSeed.transform.SetParent(null);
 
@@ -86,13 +93,8 @@ public class InteractDrone : MonoBehaviour
             rb.AddForce(Vector3.down * 2f, ForceMode.Impulse); // petit lancer
         }
 
-        Destroy(carriedSeed);
-
-        Instantiate(carriedSeed, transform.position, Quaternion.identity);
         carriedSeed = null;
-        Debug.Log("Planté");
-
-        
+        Debug.Log("Planté");     
     }
 
    
