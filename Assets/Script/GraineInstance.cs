@@ -1,9 +1,11 @@
 using UnityEngine;
 
 public class GraineInstance : MonoBehaviour
-{
-
+{ 
     private GameObject carriedSeed;
+
+    public bool isPlantable = true;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,10 +26,7 @@ public class GraineInstance : MonoBehaviour
         {
             Debug.Log("comparetag détecte");
             transform.Translate(Vector3.down * Time.deltaTime * 0.2f);
-            if (carriedSeed != null)
-            {
-                carriedSeed.SetActive(false);
-            }
+            
         }
     }
 

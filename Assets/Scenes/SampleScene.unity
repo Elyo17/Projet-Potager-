@@ -439,6 +439,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6254927013609054889, guid: 99f2833276ae0fc4b8aa6f7c678738b6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 979620906}
+    - targetCorrespondingSourceObject: {fileID: 6254927013609054889, guid: 99f2833276ae0fc4b8aa6f7c678738b6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 979620912}
   m_SourcePrefab: {fileID: 100100000, guid: 99f2833276ae0fc4b8aa6f7c678738b6, type: 3}
 --- !u!1 &380234026
 GameObject:
@@ -903,6 +906,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &979620912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979620905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 070500ca52e708542a18daab082351ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GraineInstance
+  isPlantable: 1
 --- !u!1 &1029413630
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,7 +966,7 @@ Transform:
   m_GameObject: {fileID: 1029413630}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.6, y: 12, z: 69.3}
+  m_LocalPosition: {x: 2, y: 12, z: 61.5}
   m_LocalScale: {x: 116.26223, y: 21.008738, z: 1.8360019}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1056,7 +1072,7 @@ Transform:
   m_GameObject: {fileID: 1429757026}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 71.1, y: 12, z: 8.7}
+  m_LocalPosition: {x: 59.5, y: 12, z: 0.4}
   m_LocalScale: {x: 116.26223, y: 21.008738, z: 1.8360019}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1217,6 +1233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 070500ca52e708542a18daab082351ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GraineInstance
+  isPlantable: 1
 --- !u!1001 &1419738507499584843
 PrefabInstance:
   m_ObjectHideFlags: 0

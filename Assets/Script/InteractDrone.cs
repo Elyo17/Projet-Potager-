@@ -67,11 +67,17 @@ public class InteractDrone : MonoBehaviour
             GameObject target = hit.collider.gameObject;
             Debug.Log(target, target);
 
-            // "Ramasser" la graine
-            carriedSeed = target;
-            carriedSeed.transform.SetParent(holdPoint);
-            carriedSeed.transform.localPosition = Vector3.zero;
-            carriedSeed.transform.localRotation = Quaternion.identity;
+            if (target.GetComponent<GraineInstance>().isPlantable)
+            {
+                // "Ramasser" la graine
+                carriedSeed = target;
+                carriedSeed.transform.SetParent(holdPoint);
+                carriedSeed.transform.localPosition = Vector3.zero;
+                carriedSeed.transform.localRotation = Quaternion.identity;
+
+                target.GetComponent<GraineInstance>().isPlantable = false;
+            }
+
         }
         else
         {
