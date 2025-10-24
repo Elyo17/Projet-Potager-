@@ -1,15 +1,22 @@
+using System.Collections;
 using UnityEngine;
 
 public class GraineInstance : MonoBehaviour
 {
     private Rigidbody rb;
     public bool isPlantable = true;
-    public bool isGrained = false;
+    private bool isGrained = true;
+    public float timeBeforeScale = 3f;
+    private float currentBeforeTime = 0;
+    private bool isRecolted = false;
+
+    private float maxscale = 5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Rigidbody rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
+       
     }
 
     // Update is called once per frame
@@ -21,8 +28,10 @@ public class GraineInstance : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Entre dans le trigger");
+
         // On vérifie si la graine se plante dans le sol.
-        if (other.CompareTag("Sol") && isGrained)
+        if (other.gameObject.tag == "Sol" && isGrained && !isPlantable)
         {
             Debug.Log("La graine touche le sol");
 
@@ -31,7 +40,7 @@ public class GraineInstance : MonoBehaviour
             rb.useGravity = false;
 
             // Ajuster un peu la position pour pas quel soit encréer dans le sol
-            transform.position = new Vector3(transform.position.x, transform.position.y - 0.05f, transform.position.z);
+            transform.position = new Vector3(transform.position.x,0f, transform.position.z);
 
             // On marque que la graine est planté
             isPlantable = false;
@@ -39,7 +48,50 @@ public class GraineInstance : MonoBehaviour
 
             // On va enlevé à la graine tout parent pour quel soit indépendante du drone
             transform.SetParent(null);
+
+            Planté();
         }
+    }
+
+
+    public void Planté()
+    {
+        if (isGrained)
+        {
+            StartCoroutine(Coroutine_Scale());
+        }
+    }
+
+    private IEnumerator Coroutine_Scale()
+    {
+        Debug.Log("je rentre dans ma coroutine");
+        while (maxscale > transform.localScale.x)
+        {
+            yield return new WaitForEndOfFrame();
+            transform.localScale += Vector3.one * Time.deltaTime * 0.1f;
+            if(transform.localScale.x > maxscale/2)
+            {
+                isRecolted = true;
+            }
+            Debug.Log("je fait");
+        }
+        Explosion();
+        yield return null;
+    }
+
+    private void Explosion()
+    {
+        Destroy(gameObject);
+    }
+
+    public bool Recolte()
+    {
+        if (isRecolted)
+        {
+            Explosion();
+            return true;
+        }
+        return false;
     }
 
 }

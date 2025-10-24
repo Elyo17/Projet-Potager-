@@ -67,6 +67,15 @@ public class InteractDrone : MonoBehaviour
             GameObject target = hit.collider.gameObject;
             Debug.Log(target, target);
 
+            if (target.GetComponent<GraineInstance>() != null) 
+            {
+                bool recloter= target.GetComponent<GraineInstance>().Recolte();
+                if (recloter)
+                {
+                    Debug.Log("ajouter au score");
+                }
+            }
+
             if (target.GetComponent<GraineInstance>().isPlantable)
             {
                 // "Ramasser" la graine
