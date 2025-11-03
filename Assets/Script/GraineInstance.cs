@@ -11,7 +11,7 @@ public class GraineInstance : MonoBehaviour
     private bool isRecolted = false;
 
     private float maxscale = 5f;
-    public int recoltedValue = 5;
+    public int recoltedValue = 1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

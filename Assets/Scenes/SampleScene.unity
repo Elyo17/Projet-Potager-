@@ -1083,7 +1083,7 @@ GameObject:
   - component: {fileID: 1274431172}
   - component: {fileID: 1274431171}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: scoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1502,7 +1502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68be7c10e576fd84cbc7a5c926503273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScorePlayer
-  score: 5
+  score: 0
+  scoreText: {fileID: 1274431171}
 --- !u!4 &1959839261
 Transform:
   m_ObjectHideFlags: 0
@@ -1564,7 +1565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GraineInstance
   isPlantable: 1
   timeBeforeScale: 3
-  recoltedValue: 5
+  recoltedValue: 1
 --- !u!1001 &1419738507499584843
 PrefabInstance:
   m_ObjectHideFlags: 0
