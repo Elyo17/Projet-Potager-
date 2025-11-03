@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class InteractDrone : MonoBehaviour
 {
@@ -69,10 +70,13 @@ public class InteractDrone : MonoBehaviour
 
             if (target.GetComponent<GraineInstance>() != null) 
             {
-                bool recloter= target.GetComponent<GraineInstance>().Recolte();
-                if (recloter)
+                GraineInstance graine = target.GetComponent<GraineInstance>();
+                bool recolter = graine.Recolte();
+                if (recolter)
                 {
-                    Debug.Log("ajouter au score");
+                    ScorePlayer.Instance.AddScore(graine.recoltedValue);
+                    Debug.Log("Graine récoltée, score ajouté !");
+                    return;
                 }
             }
 
