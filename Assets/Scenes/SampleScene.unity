@@ -6000,8 +6000,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd79f987ed627443bbeb7b091bf384f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoxZone
-  rows: 8
-  columns: 8
+  rows: 10
+  columns: 10
   cellSize: 1.25
   boxPrefab: {fileID: 991770964481190844, guid: 81cf10ff9b0d14045a80ac4cbca13975, type: 3}
 --- !u!4 &436636000
@@ -22939,7 +22939,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1529877514
 MeshRenderer:
   m_ObjectHideFlags: 0
