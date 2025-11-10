@@ -10,14 +10,14 @@ public class GraineInstance : MonoBehaviour
     private float currentBeforeTime = 0;
     private bool isRecolted = false;
 
-    private float maxscale = 5f;
+    private float maxscale = 3f;
     public int recoltedValue = 1;
+    public GameObject plant; 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-       
     }
 
     // Update is called once per frame
@@ -60,6 +60,7 @@ public class GraineInstance : MonoBehaviour
         if (isGrained)
         {
             StartCoroutine(Coroutine_Scale());
+            this.GetComponent<MeshFilter>().sharedMesh = plant.GetComponent<MeshFilter>().sharedMesh;
         }
     }
 

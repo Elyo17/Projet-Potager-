@@ -5,7 +5,7 @@ public class BoxZone : MonoBehaviour
 {
 
     public int rows; // nombre de lignes (Z)
-    public int columns; // nombre de colonne (X)
+    public int columns; // nombre de colonne (X) 
     public float cellSize; // taille d'une case
  
 
