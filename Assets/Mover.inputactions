@@ -23,6 +23,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Interact2",
+                    "type": "Button",
+                    "id": "d218e3af-055d-462b-85d1-e2e50e7f01a5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -149,12 +158,12 @@
                 },
                 {
                     "name": "",
-                    "id": "f7f849e0-9ddd-4b86-a9d1-cfed29c5c65d",
+                    "id": "a8df09a2-f163-4751-9047-0f122759ed83",
                     "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Interact",
+                    "action": "Interact2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

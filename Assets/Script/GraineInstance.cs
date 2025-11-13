@@ -12,6 +12,7 @@ public class GraineInstance : MonoBehaviour
 
     private float maxscale = 3f;
     public int recoltedValue = 1;
+    public bool isWatered = false;
     public GameObject plant; 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -54,12 +55,19 @@ public class GraineInstance : MonoBehaviour
         }
     }
 
+    public void Water()
+    {
+        if (isGrained && !isWatered)
+        {
+            isWatered = true;
+            StartCoroutine(Coroutine_Scale());
+        }
+    }
 
     public void Planté()
     {
         if (isGrained)
         {
-            StartCoroutine(Coroutine_Scale());
             this.GetComponent<MeshFilter>().sharedMesh = plant.GetComponent<MeshFilter>().sharedMesh;
         }
     }
@@ -70,7 +78,7 @@ public class GraineInstance : MonoBehaviour
         while (maxscale > transform.localScale.x)
         {
             yield return new WaitForEndOfFrame();
-            transform.localScale += Vector3.one * Time.deltaTime * 0.1f;
+            transform.localScale += Vector3.one * Time.deltaTime * 0.3f;
             if(transform.localScale.x > maxscale/2)
             {
                 isRecolted = true;

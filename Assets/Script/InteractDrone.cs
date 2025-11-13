@@ -6,12 +6,15 @@ public class InteractDrone : MonoBehaviour
 {
 
     public InputActionReference ActionReference;
+    public InputActionReference WaterAction;
 
     public float interactRange = 3f; // distance max pour interagir
     public LayerMask interactLayer; // couche des objets interactifs (ex: "Seed")
 
     public GameObject carriedSeed; // la graine que le drone tient actuellement
     public Transform holdPoint; // un point enfant du drone où la graine est tenue
+
+    public ParticleSystem waterParticles;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,14 +25,24 @@ public class InteractDrone : MonoBehaviour
     {
 
         ActionReference.action.performed += OnActionPerformed;
+
+        WaterAction.action.performed += OnWaterStart;
+        WaterAction.action.canceled += OnWaterStop;
+
+
         ActionReference.action.Enable();
+        WaterAction.action.Enable();
     }
 
     private void OnDisable()
     {
-
         ActionReference.action.performed -= OnActionPerformed;
+
+        WaterAction.action.performed -= OnWaterStart;
+        WaterAction.action.canceled -= OnWaterStop;
+
         ActionReference.action.Disable();
+        WaterAction.action.Disable();
     }
 
 
@@ -54,6 +67,27 @@ public class InteractDrone : MonoBehaviour
         else
         {
             DropSeed();
+        }
+    }
+
+
+    private void OnWaterStart(InputAction.CallbackContext context)
+    {
+        waterParticles.Play();
+        Debug.Log("lancement de l'arrosage");
+    }
+
+    private void OnWaterStop(InputAction.CallbackContext context)
+    {
+        waterParticles.Stop();
+        Ray ray = new Ray(transform.position, Vector3.down);
+        if (Physics.Raycast(ray, out RaycastHit hit, interactRange, interactLayer))
+        {
+            GraineInstance seed = hit.collider.GetComponent<GraineInstance>();
+            if (seed != null && !seed.isWatered)
+            {
+                seed.Water();
+            }
         }
     }
 
