@@ -7,6 +7,7 @@ public class Pause : MonoBehaviour
     public GameObject pauseMenu;
     public bool isPaused;
     public InputActionReference ActionReference;
+    public AudioSource musicSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,6 +52,7 @@ public class Pause : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+        musicSource.Pause(); // Stop la musique
     }
 
     public void ResumeGame()
@@ -58,6 +60,8 @@ public class Pause : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        musicSource.UnPause(); // Reprend la musique
+
     }
 
     public void GoToMenu()
