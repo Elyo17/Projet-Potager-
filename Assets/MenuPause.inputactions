@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "MenuPause",
+    "maps": [
+        {
+            "name": "Pause",
+            "id": "6136d928-82ef-4c58-9867-7c614413bbba",
+            "actions": [
+                {
+                    "name": "MenuPause",
+                    "type": "Button",
+                    "id": "2e02916f-3269-4f46-b13f-137e85778775",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "08419d62-9331-47fa-b760-794e68446a5b",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MenuPause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
