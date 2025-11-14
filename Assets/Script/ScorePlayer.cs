@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -8,11 +8,14 @@ public class ScorePlayer : MonoBehaviour
 
     public int score = 0;
     public TextMeshProUGUI scoreText; // assigner ce titre dans l'inspector
+    public int scoreToWin = 4; // Score nÃ©cessaire pour gagner
+    public TextMeshProUGUI winText; // Texte affichÃ© quand on gagne
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         UpdateUI();
+        if (winText != null) winText.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -27,17 +30,35 @@ public class ScorePlayer : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    //Cette fonction permet d'incrémenter le score et de le mettre à jour.
+    //Cette fonction permet d'incrÃ©menter le score et de le mettre Ã  jour.
     public void AddScore(int value)
     {
         score += value;
         UpdateUI();
+
+
+        if (score >= scoreToWin)
+        {
+            WinGame();
+        }
+
     }
 
-    //Cette fonction permet de pouvoir faire une mise à jour du score en réel.
+    //Cette fonction permet de pouvoir faire une mise Ã  jour du score en rÃ©el.
     private void UpdateUI()
     {
         if (scoreText != null)
             scoreText.text = "Score : " + score;
     }
+
+
+    private void WinGame()
+    {
+        Debug.Log("Victoire !");
+        if (winText != null)
+        {
+            winText.gameObject.SetActive(true);
+        }
+    }
+
 }

@@ -123,6 +123,8 @@ public class InteractDrone : MonoBehaviour
                 carriedSeed.transform.localRotation = Quaternion.identity;
 
                 target.GetComponent<GraineInstance>().isPlantable = false;
+
+                FindObjectOfType<GraineGenerate>().Regénèration(carriedSeed.transform);
             }
 
         }
@@ -147,7 +149,9 @@ public class InteractDrone : MonoBehaviour
         }
 
         carriedSeed = null;
-        Debug.Log("Planté");     
+        Debug.Log("Planté");
+
+       
     }
 
    
