@@ -243,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GraineInstance
   isPlantable: 1
   timeBeforeScale: 3
-  recoltedValue: 4
+  recoltedValue: 14
   isWatered: 0
   plant: {fileID: 5006705691422353657, guid: 71c7acb842efb72458cf6bfaaf2f4b19, type: 3}
 --- !u!54 &9233501
@@ -47777,7 +47777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GraineInstance
   isPlantable: 1
   timeBeforeScale: 3
-  recoltedValue: 10
+  recoltedValue: 15
   isWatered: 0
   plant: {fileID: 1031327643518222099, guid: 2ec481696ffaa6e4a9288cc80be9dc32, type: 3}
 --- !u!4 &1226940170 stripped
@@ -50055,7 +50055,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GraineInstance
   isPlantable: 1
   timeBeforeScale: 3
-  recoltedValue: 12
+  recoltedValue: 20
   isWatered: 0
   plant: {fileID: 1683154814284222167, guid: f9ee48f66e7a44e4d8aeb16afc0bf518, type: 3}
 --- !u!4 &1299505246 stripped
@@ -71293,7 +71293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GraineInstance
   isPlantable: 1
   timeBeforeScale: 3
-  recoltedValue: 4
+  recoltedValue: 14
   isWatered: 0
   plant: {fileID: 1232332776039839595, guid: dc1357dabfec17645a2b00cdd53e89e3, type: 3}
 --- !u!54 &1915469282
@@ -73124,7 +73124,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963952050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -192}
+  m_LocalPosition: {x: 0, y: 0, z: -191.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -73132,7 +73132,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 76.3, y: 80.5}
+  m_AnchoredPosition: {x: 85, y: 81.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1963952052
@@ -74857,7 +74857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GraineInstance
   isPlantable: 1
   timeBeforeScale: 3
-  recoltedValue: 8
+  recoltedValue: 20
   isWatered: 0
   plant: {fileID: 3270897157638235316, guid: b2c2d99c938aebd4a9cff66560669e94, type: 3}
 --- !u!65 &2004371686
@@ -77397,7 +77397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GraineInstance
   isPlantable: 1
   timeBeforeScale: 3
-  recoltedValue: 5
+  recoltedValue: 20
   isWatered: 0
   plant: {fileID: 3262389632210150585, guid: 4aea619a786127a438c0dd5c33771fcc, type: 3}
 --- !u!54 &2076588538
